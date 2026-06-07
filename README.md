@@ -18,8 +18,7 @@
 
 #### 2. Clone the repository to your local machine using the following Git command:
 ```bash
-git clone git@github.com:Deep4GB/CMPSC472_FinalProject.git
-cd CMPSC472_FinalProject
+git clone https://github.com/TERRORBYTE4320/Health-Tracker-and-Medicine-Reminder.git
 ```
 #### 3. Create a Virtual Environment (recommended):
 Open the Command Prompt or Terminal and navigate to the project directory using the ``cd`` command.
