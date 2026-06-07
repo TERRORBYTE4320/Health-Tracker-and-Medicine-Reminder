@@ -1,37 +1,16 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 <h1 align="center"> Elderly Reminders and Health Tracker </h1>
 
-<div align="center">
-   <p></p>
-   <a href="https://github.com/Deep4GB">
-     <img src="https://github.com/Deep4GB.png" width="50px">
-   </a>
-     <a href="https://github.com/devv64bit">
-    <img src="https://github.com/devv64Bit.png?size=50" width="50px">
-   </a>
-   </a>
-</div>
-<h3 align="center"> Members: Deep Patel and Dev Patel</h5>
 
-## Table of Contents
-- [Installation and Usage Instructions](#installation-and-usage-instructions)
-- [Project Overview](#project-overview)
-- [Project Goals](#project-goals)
-- [Significance of the Project](#significance-of-the-project)
-- [Code Structure](#code-structure)
-- [Functionality and Test Results](#functionality-and-test-results)
-- [Discussion and Conclusions](#discussion-and-conclusions)
+<h3 align="center"> Members: Soham Pahari, Rajarshi Kulavi, Sk.Dilshan Abrar and Tamal Maji</h5>
 
 ## Installation and Usage Instructions
 
 ### Installation
 #### 1. Ensure you have Python 3.11.6 installed. You can download Python 3.11.6 from the official Python website: [Python Downloads page](https://www.python.org/downloads/)
 
-#### 2. Clone the repository to your local machine using the following Git command:
-```bash
-git clone git@github.com:Deep4GB/CMPSC472_FinalProject.git
-cd CMPSC472_FinalProject
-```
+#### 2. Download the file 'CMPSC472_FinalProject-main' as zip:
+
 #### 3. Create a Virtual Environment (recommended):
 Open the Command Prompt or Terminal and navigate to the project directory using the ``cd`` command.
 
