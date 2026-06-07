@@ -19,8 +19,7 @@ pip install -r requirements.txt
 ```bash
 python app.py
 ```
-#### 5. Ctrl+Left click:
-- 'http://127.0.0.1:5001/'
+#### 5. Ctrl+Left click: on the host server 'http://127.0.0.1:5001/'
 
 ### Usage Instructions
 #
@@ -162,44 +161,51 @@ These concepts work together to facilitate the functioning of the application, m
 
 ## Code Structure
 
-### The code is structured as follows:
+### Project Structure:
 
-**app.py:**
+<pre>
+CMPSC472_FinalProject-main/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── templates/
+│   ├── index.html
+│   ├── reminder.html
+│   └── health.html
+│
+├── data/
+│   ├── general_reminders.json
+│   ├── medications.json
+│   ├── appointments.json
+│   └── health_data.json
+│
+├── Images/
+│   ├── image.png
+│   ├── image-1.png
+│   ├── image-2.png
+│   ├── image-3.png
+│   ├── image-4.png
+│   ├── image-5.png
+│   └── Health_Tracking.png
+│
+└── __pycache__/
+</pre>
 
-- Implements a Flask web application to manage reminders and health metrics.
-- Defines routes for different functionalities (add, delete, display reminders, health tracker).
-- Uses JSON files to store reminders and health metrics.
+<h2>Description</h2>
 
-**index.html:**
-- This structured HTML file is main home page from where user will chose where to redirect.
-- The use of Tailwind CSS contributes to a visually appealing, animations and responsive design.
-- The integrated JavaScript includes importing icons and loading.
+<p>
+This project is a Flask web application for managing reminders and tracking health information.
+</p>
 
-**reminder.html:**
-- This structured HTML file ensures a clear organization of the user interface components, including forms for adding reminders, displaying existing reminders, and facilitating user interaction.
-- The use of Tailwind CSS contributes to a visually appealing and responsive design.
-- The integrated JavaScript enhances the user experience by allowing the deletion of reminders without the need for page refresh.
-
-**health.html:**
-- This structured HTML file is made for health metrics page of the app. 
-- It has container for health tracking with a reminder card, health tracking form for adding metrics, search feature for filtering metrics by date, list displaying existing health metrics, and javascript functions for searching, displaying, and deleting health records.
-
-**Note:**
-
-- Data Storage:
-  * Reminders are stored as JSON files (`general_reminders.json`, `medications.json`, `appointments.json`) in app.py and reminder.html.
-   * Health Metrics are stored as JSON file as well `health_data.json` via app.py and health.html.
-
-**Communication:**
-- The `app.py` script uses Flask to create a web interface and the logic is implemented in there.
-
-- The `index.html` file is the main(home) page of the web application. It contains the HTML code for the web interface. It is frontend of the program.
-
-- The `reminder.html` file is the reminder page of the web application. It contains the HTML code for the web interface. It is frontend of the program.
-
-- The `health.html` file is the health metrics page of the web application. It contains the HTML code for the web interface. It is frontend of the program.
-
-This outline provides an overview of the code structure, highlighting key functions, data storage, and the interaction between different components.
+<ul>
+  <li><strong>app.py:</strong> Main Python file that runs the Flask app.</li>
+  <li><strong>templates:</strong> Contains the HTML pages for the app.</li>
+  <li><strong>data:</strong> Stores reminders and health records in JSON files.</li>
+  <li><strong>Images:</strong> Contains images used in the project.</li>
+  <li><strong>requirements.txt:</strong> Lists the Python libraries needed to run the app.</li>
+</ul>
 
 
 ## Functionality and Test Results
