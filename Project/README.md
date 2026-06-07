@@ -164,7 +164,7 @@ These concepts work together to facilitate the functioning of the application, m
 ### Project Structure:
 
 <pre>
-CMPSC472_FinalProject-main/
+Project/
 │
 ├── app.py
 ├── requirements.txt
