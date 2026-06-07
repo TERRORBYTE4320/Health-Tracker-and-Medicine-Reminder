@@ -1,17 +1,6 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 <h1 align="center"> Elderly Reminders and Health Tracker </h1>
 
-<div align="center">
-   <p></p>
-   <a href="https://github.com/Deep4GB">
-     <img src="https://github.com/Deep4GB.png" width="50px">
-   </a>
-     <a href="https://github.com/devv64bit">
-    <img src="https://github.com/devv64Bit.png?size=50" width="50px">
-   </a>
-   </a>
-</div>
-<h3 align="center"> Members: Deep Patel and Dev Patel</h5>
 
 ## Table of Contents
 - [Installation and Usage Instructions](#installation-and-usage-instructions)
