@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Health Tracking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            background-color: #9cadd0;
+            color: #333;
+        }
+
+        .reminder-card {
+            background-color: rgba(255, 255, 255, 0.836);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .reminder-card-header {
+            padding: 15px;
+        }
+
+        .reminder-form {
+            padding: 20px;
+        }
+
+        .reminder-list {
+            padding: 20px;
+        }
+
+        .delete-btn {
+            background-color: #e53e3e;
+            color: #fff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 767px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-150 mt-8">
+    <header class="bg-black bg-opacity-20 py-4 px-6 flex justify-between items-center fixed top-0 w-full">
+        <!-- Header Text -->
+        <h1 class="text-3xl font-bold text-white">Health Tracker</h1>
+        <!-- Container with circular border -->
+        <div class="rounded-full border border-gray-300 flex items-center overflow-hidden">
+            <!-- Options/Buttons -->
+            <div class="space-x-4 flex items-center">
+                <a href="/" class="hover:no-underline">
+                    <button class="bg-opacity-10 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300">
+                        Home
+                    </button>
+                </a>
+                <!-- Divider line -->
+                <div class="border-l border-gray-300 h-6"></div>
+                <a href="/reminder" class="hover:no-underline">
+                    <button class="bg-opacity-10 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300">
+                        Reminders
+                    </button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto py-8 mt-28">
+        <div class="reminder-card mb-8 mx-40">
+            <div class="reminder-form p-4">
+                <!-- Health tracking form -->
+                <form method="POST" action="/health" class="w-full max-w-md mx-auto pt-5">
+                    <!-- Form fields -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold mb-2" for="health_date">Date:</label>
+                        <input class="border rounded-md px-3 py-2 w-full" type="date" id="health_date" name="date"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold mb-2" for="blood_pressure">Blood Pressure:</label>
+                        <input class="border rounded-md px-3 py-2 w-full" type="text" id="blood_pressure"
+                            name="blood_pressure" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold mb-2" for="heart_rate">Heart Rate:</label>
+                        <input class="border rounded-md px-3 py-2 w-full" type="text" id="heart_rate" name="heart_rate"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold mb-2" for="other_metric">Other Metric:</label>
+                        <input class="border rounded-md px-3 py-2 w-full" type="text" id="other_metric"
+                            name="other_metric">
+                    </div>
+                    <div class="text-center">
+                        <input
+                            class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded cursor-pointer"
+                            type="submit" value="Add Health Metrics">
+                    </div>
+                </form>
+            </div>
+            <!-- Search date input -->
+            <div class="mt-4 px-4">
+                <label class="block text-sm font-bold mb-2" for="search_date">Search by Date:</label>
+                <input class="border rounded-md px-3 py-2 w-full" type="date" id="search_date" name="search_date">
+                <button onclick="searchByDate()"
+                    class="mt-2 bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 rounded cursor-pointer">Search</button>
+            </div>
+
+            <!-- List of health metrics -->
+            <div class="reminder-list p-4">
+                <h2 class="text-lg font-bold">Health Metrics:</h2>
+                <ul id="health_metrics_list">
+                    <!-- Health metrics will be displayed here -->
+                </ul>
+            </div>
+            <div class="reminder-list p-4">
+                <!-- List of health metrics -->
+                <h2 class="text-lg font-bold">Health Metrics:</h2>
+                <ul>
+                    <!-- Loop through health metrics here -->
+                    {% for metric in health_metrics %}
+                    <li class="border-b py-3">
+                        <p><strong>Date:</strong> {{ metric.health_date }}</p>
+                        <p><strong>Blood Pressure:</strong> {{ metric.blood_pressure }}</p>
+                        <p><strong>Heart Rate:</strong> {{ metric.heart_rate }}</p>
+                        <p><strong>Other Metric:</strong> {{ metric.other_metric }}</p>
+                        <!-- Add delete button with identifier for deletion -->
+                        <button class="mt-2 bg-red-500 hover:bg-red-700 text-white py-0 px-2 rounded cursor-pointer"
+                            onclick="deleteHealthRecord('{{ metric.health_date }}')">Delete</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function searchByDate() {
+            const selectedDate = document.getElementById('search_date').value;
+            fetch(`/health?date=${selectedDate}`)
+                .then(response => response.json())
+                .then(data => displayHealthMetrics(data));
+        }
+
+        function displayHealthMetrics(metrics) {
+            const healthList = document.getElementById('health_metrics_list');
+            healthList.innerHTML = ''; // Clear previous results
+            metrics.forEach(metric => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('border-b', 'py-3');
+                listItem.innerHTML = `
+                <p><strong>Date:</strong> ${metric.health_date}</p>
+                <p><strong>Blood Pressure:</strong> ${metric.blood_pressure}</p>
+                <p><strong>Heart Rate:</strong> ${metric.heart_rate}</p>
+                <p><strong>Other Metric:</strong> ${metric.other_metric}</p>
+            `;
+                healthList.appendChild(listItem);
+            });
+        }
+
+        function deleteHealthRecord(date) {
+            // Send a DELETE request to the Flask route for deleting health records
+            fetch('/delete_health_record', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ health_date: date })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // If deletion is successful, reload the page to reflect the changes
+                        window.location.reload();
+                    } else {
+                        console.error('Failed to delete health record');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+
+</html>
