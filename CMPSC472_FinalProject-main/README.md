@@ -9,44 +9,19 @@
 ### Installation
 #### 1. Ensure you have Python 3.11.6 installed. You can download Python 3.11.6 from the official Python website: [Python Downloads page](https://www.python.org/downloads/)
 
-#### 2. Download the file 'CMPSC472_FinalProject-main' as zip:
+#### 2. Download the file 'CMPSC472_FinalProject-main' as zip
 
-#### 3. Create a Virtual Environment (recommended):
-Open the Command Prompt or Terminal and navigate to the project directory using the ``cd`` command.
-
-* Install `virtualenv` (if not installed) :
-   ```bash
-   pip install virtualenv
-   ```
-
-* Activate `virtualenv`:
-   ```bash
-   virtualenv venv
-   ```
-
-- On Windows:
-  * Activate the virtual environment
-    ```bash
-    venv\Scripts\activate
-    ```
-- On macOS and Linux:
-  * Activate the virtual environment
-    ```bash
-    source venv/bin/activate
-    ```
-- To deactivate the virtual environment:
-  ```bash
-  deactivate
-  ```
-#### 4. Install the required packages using the following command:
+#### 3. :Open the Command Prompt or Terminal and navigate to the project directory using the ``cd`` command.
 ```bash
 pip install -r requirements.txt
 ```
-
-#### 5. Run the application using the following command:
+#### 4. Run the application using the following command:
 ```bash
 python app.py
 ```
+#### 5. Ctrl+Left click:
+- 'http://127.0.0.1:5001/'
+
 ### Usage Instructions
 #
 ### General Reminders
