@@ -2,7 +2,7 @@
 <h1 align="center"> Elderly Reminders and Health Tracker </h1>
 
 
-<h3 align="center"> Members: Soham Pahari, Sk.Dilshan Abrar and Tamal Maji, Rajarshi Kulavi</h5>
+<h3 align="center"> Members: Soham Pahari, Sk.Dilshan Abrar and Tamal Maji, and Rajarshi Kulavi</h5>
 
 ## Installation and Usage Instructions
 
