@@ -9,7 +9,7 @@
 ### Installation
 #### 1. Ensure you have Python 3.11.6 installed. You can download Python 3.11.6 from the official Python website: [Python Downloads page](https://www.python.org/downloads/)
 
-#### 2. Download the file 'CMPSC472_FinalProject-main' as zip
+#### 2. Download the file 'Project' as zip
 
 #### 3. :Open the Command Prompt or Terminal and navigate to the project directory using the ``cd`` command.
 ```bash
