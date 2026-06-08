@@ -2,7 +2,7 @@
 <h1 align="center"> Health-Tracker-and-Medicine-Reminder </h1>
 
 
-<h3 align="center"> Members: Soham Pahari, Sk.Dilshan Abrar and Tamal Maji, and Rajarshi Kulavi</h5>
+<h3 align="center"> Members: Rajarshi Kulavi, Soham Pahari, Sk.Dilshan Abrar and Tamal Maji </h5>
 
 ## Installation and Usage Instructions
 
