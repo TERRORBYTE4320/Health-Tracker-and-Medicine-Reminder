@@ -7,7 +7,7 @@
 ## Installation and Usage Instructions
 
 ### Installation
-#### 1. Ensure you have Python 3.11.6 installed. You can download Python 3.11.6 from the official Python website: [Python Downloads page](https://www.python.org/downloads/)
+#### 1. Ensure you have Python 3.11.6 installed.(NOTE:- Check .pip while installing), You can download Python 3.11.6 from the official Python website: [Python Downloads page](https://www.python.org/downloads/)
 
 #### 2. Download the file 'Project' as zip
 
