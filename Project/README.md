@@ -1,5 +1,5 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
-<h1 align="center"> Elderly Reminders and Health Tracker </h1>
+<h1 align="center"> Health-Tracker-and-Medicine-Reminder </h1>
 
 
 <h3 align="center"> Members: Soham Pahari, Sk.Dilshan Abrar and Tamal Maji, and Rajarshi Kulavi</h5>
